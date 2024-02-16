@@ -1,6 +1,6 @@
 // App.js File
 import React, { useState } from "react";
-//import ToDoForm from "./ToDoForm";
+import ToDoForm from "./ToDoForm";
 import ToDoList from "./ToDoList";
 
 export default function App() {
@@ -35,17 +35,9 @@ export default function App() {
   }
 
   return (
-    <div className="wrapper">
-      <div className="toDoList">
-        {todos.length > 0 &&
-          todos.map((todo) => (
-            <div className="singleToDo" key={todo.id}>
-              {todo.text}
-              <button onClick={() => toggleToDo(todo.id)}> Completed </button>
-              <button onClick={() => deleteToDo(todo.id)}> Delete </button>
-            </div>
-          ))}
-      </div>
+    <div className="App">
+      <ToDoForm addTodo={addTodo} />
+      <ToDoList todos={todos} toggleToDo={toggleToDo} deleteToDo={deleteToDo} />
     </div>
   );
 }
