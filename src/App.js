@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import ToDoForm from "./ToDoForm";
 import ToDoList from "./ToDoList";
 import './AppStyle.css'
+import localImage from './IMG_0980.jpg';
 
 export default function App() {
   //initialize variables
@@ -83,6 +84,7 @@ export default function App() {
       <h1>Task List</h1>
       <ToDoForm addTodo={addTodo} />
       <ToDoList todos={todos} deleteToDo={deleteToDo} deleteMultipleTodos={deleteMultipleTodos} toggleTodo={toggleToDo}/>
+      <img className = "pictures" src={localImage} alt = "Nature Image" />
     </div>
   );
 }
