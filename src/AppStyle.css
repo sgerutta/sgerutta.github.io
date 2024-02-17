@@ -1,0 +1,19 @@
+body{
+    margin:0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.App{
+    text-align: center;
+}
+
+.pictures{
+    max-width: 30%;
+    height: auto;
+}
+
+.slides{
+    width: 500px;
+    height: 280 px;
+    margin: 0 auto;
+}
