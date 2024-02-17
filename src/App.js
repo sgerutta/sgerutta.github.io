@@ -80,7 +80,7 @@ export default function App() {
   return (
     <div className="App">
       <ToDoForm addTodo={addTodo} />
-      <ToDoList todos={todos} deleteToDo={deleteToDo} deleteMultipleTodos={deleteMultipleTodos}/>
+      <ToDoList todos={todos} deleteToDo={deleteToDo} deleteMultipleTodos={deleteMultipleTodos} toggleTodo={toggleToDo}/>
     </div>
   );
 }
