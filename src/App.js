@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import ToDoForm from "./ToDoForm";
 import ToDoList from "./ToDoList";
+import './AppStyle.css'
 
 export default function App() {
   //initialize variables
@@ -79,6 +80,7 @@ export default function App() {
 
   return (
     <div className="App">
+      <h1>Task List</h1>
       <ToDoForm addTodo={addTodo} />
       <ToDoList todos={todos} deleteToDo={deleteToDo} deleteMultipleTodos={deleteMultipleTodos} toggleTodo={toggleToDo}/>
     </div>
