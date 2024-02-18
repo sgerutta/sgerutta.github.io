@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import ToDoForm from "./ToDoForm";
 import ToDoList from "./ToDoList";
 import './AppStyle.css'
-
 import ImageSlider from './ImageSlider';
 import localImage from './image_1.jpg';
 import food from './image_2.jpg';
 import people from './image_3.jpg';
+
 
 export default function App() {
   //initialize variables
@@ -17,6 +17,7 @@ export default function App() {
     { url: food, title: 'Second Image' },
     { url: people, title: 'Third Image' },
   ];
+
 
   //add to-do
   function addTodo(text) {
@@ -87,6 +88,7 @@ export default function App() {
   function deleteToDo(id) {
     setTodos(deleteOneTodoHelper(id));
   }
+
   const containerStyles = {
     width: '500px',
     height: '350px',
@@ -116,6 +118,7 @@ export default function App() {
       <div style = {containerStyles}> 
       <ImageSlider slides={slides} />
       </div>
+
     </div>
   );
 }
