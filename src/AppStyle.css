@@ -1,8 +1,12 @@
+/* primary goal: to implement basic CSS */
+
+/* for any text in the body part of the website, it will be in font Times New Roman */
 body{
     margin:0;
     font-family: 'Times New Roman', Times, serif;
 }
 
+/* any text will be centered in the webpage */
 .App{
     text-align: center;
 }

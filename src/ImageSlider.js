@@ -3,7 +3,7 @@ import "./ImageSliderStyle.css";
 
 //Modified code from Monsterlessons Academy: https://youtu.be/SK9AlIbexOE?si=m4WICktHhxupVpV2
 
-//main goal: to be able to encorporate another component with the task list
+//primary goal: to be able to encorporate another component with the task list
 
 const ImageSlider = ({ slides }) => {
   //initialize variables to know which slide

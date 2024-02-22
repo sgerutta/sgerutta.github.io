@@ -4,23 +4,26 @@ import ToDoForm from "./ToDoForm";
 import ToDoList from "./ToDoList";
 import './AppStyle.css'
 import ImageSlider from './ImageSlider';
-import localImage from './image_1.jpg';
+import nature from './image_1.jpg';
 import food from './image_2.jpg';
 import people from './image_3.jpg';
 
-//main goal: to be able to have a running website on github
+//primary goal: to be able to have a running website on github
+//secondary goal: to be able to organize the code in multiple documents.
+//this document is for the essential functions
 
 export default function App() {
   //initialize variables
   const [todos, setTodos] = useState([]);
   const slides = [
-    { url: localImage, title: 'First Image' },
-    { url: food, title: 'Second Image' },
-    { url: people, title: 'Third Image' },
+    { url: nature, title: 'Nature Image' },
+    { url: food, title: 'Food Image' },
+    { url: people, title: 'People Image' },
   ];
 
 
   //add to-do, props is text, and creates an object that has an unique id, text, and completed feature
+  //adds the todo to todos
   function addTodo(text) {
     if (text !== "") {
       const newTodo = {
@@ -28,12 +31,11 @@ export default function App() {
         text: text,
         completed: false,
       };
-
       setTodos((prevTodos) => [...prevTodos, newTodo]);
     }
   }
 
-  //toggle the todos
+  //toggle the todos, takes in the id, and will the given objects' completed feature
   function toggleToDoHelper(id){
     let tempTodos = [];
     //loop through the ids, and change the given id's completed status
@@ -47,51 +49,53 @@ export default function App() {
       }
       tempTodos.push(todos[i])
     }
-
     return tempTodos;
   }
 
-  //toggle to-do
+  //toggle to-do, takes in an id, and updates the todos
   function toggleToDo(id) {
     setTodos(toggleToDoHelper(id));
   }
 
   //delete function helper
+  //takes in the todos, and returns only the objects that are not completed
   function deleteMultipleHelper(todos){
     let tempTodos = [];
     for(let i = 0; i < todos.length; i++){
       if(todos[i].completed === true){
         continue;
       } else{
-        tempTodos.push(todos[i])
+        tempTodos.push(todos[i]);
       }
     }
-
     return tempTodos;
   }
 
-  //delete multiple todos
+  //delete multiple todos, takes in todos, and updates the todos
   function deleteMultipleTodos(todos){
     setTodos(deleteMultipleHelper);
   }
 
+  //to delete one todo, from the button. takes in an id
+  //returns all the other todos
   function deleteOneTodoHelper(id){
     let tempTodos = [];
     for(let i = 0; i < todos.length; i++){
       if(todos[i].id !== id){
-        tempTodos.push(todos[i])
+        tempTodos.push(todos[i]);
       }
     }
     return tempTodos;
-
   }
-  //delete to-do
+
+  //delete to-do, takes in id, and updates the todos
   function deleteToDo(id) {
     setTodos(deleteOneTodoHelper(id));
   }
 
 
-  //can add tasks
+  //what this document overall returns, the set up of the webpage
+  //calling in the Form, List, and ImageSlider
   return (
     <div className="App">
       <h1>Task List</h1>
