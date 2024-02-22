@@ -8,6 +8,7 @@ import localImage from './image_1.jpg';
 import food from './image_2.jpg';
 import people from './image_3.jpg';
 
+//main goal: to be able to have a running website on github
 
 export default function App() {
   //initialize variables
@@ -19,7 +20,7 @@ export default function App() {
   ];
 
 
-  //add to-do
+  //add to-do, props is text, and creates an object that has an unique id, text, and completed feature
   function addTodo(text) {
     if (text !== "") {
       const newTodo = {
@@ -59,7 +60,7 @@ export default function App() {
   function deleteMultipleHelper(todos){
     let tempTodos = [];
     for(let i = 0; i < todos.length; i++){
-      if(todos[i].completed == true){
+      if(todos[i].completed === true){
         continue;
       } else{
         tempTodos.push(todos[i])
@@ -89,25 +90,6 @@ export default function App() {
     setTodos(deleteOneTodoHelper(id));
   }
 
-  const containerStyles = {
-    width: '500px',
-    height: '350px',
-    margin:' 0 auto',
-  };
-
-  // return (
-  //   <div className="App">
-  //     <h1>Task List</h1>
-  //     {/* <ToDoForm addTodo={addTodo} />
-  //     <ToDoList todos={todos} deleteToDo={deleteToDo} deleteMultipleTodos={deleteMultipleTodos} toggleTodo={toggleToDo}/> */}
-  //     <img className = "pictures" src={people} alt = "Nature Image" />
-  //     {/* <div style = {containerStyles}> */}
-  //     <img className = "pictures" src={food} alt = "Nature Image" />
-  //     <img className = "pictures" src={localImage} alt = "Nature Image" />
-  //     <ImageSlider  />
-  //     {/* </div> */}
-  //   </div>
-  // );
 
   //can add tasks
   return (
@@ -115,8 +97,8 @@ export default function App() {
       <h1>Task List</h1>
       <ToDoForm addTodo={addTodo} /> 
       <ToDoList todos={todos} deleteToDo={deleteToDo} deleteMultipleTodos={deleteMultipleTodos} toggleTodo={toggleToDo}/> 
-      <div style = {containerStyles}> 
-      <ImageSlider slides={slides} />
+      <div className="containerStyles"> 
+        <ImageSlider slides={slides} />
       </div>
 
     </div>
