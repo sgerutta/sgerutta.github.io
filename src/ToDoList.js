@@ -19,7 +19,7 @@ export default function taskList({
       <div className="wrapper">
         <ul>
           <div className="toDoList">
-            {todos.length > 0 &&
+            {todos &&
               todos.map((todo) => (
                 <div className="singleToDo" key={todo.id}>
                   <input

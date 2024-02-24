@@ -15,6 +15,7 @@ import people from './image_3.jpg';
 export default function App() {
   //initialize variables
   const [todos, setTodos] = useState([]);
+  //reset todos
   const slides = [
     { url: nature, title: 'Nature Image' },
     { url: food, title: 'Food Image' },
@@ -59,16 +60,8 @@ export default function App() {
 
   //delete function helper
   //takes in the todos, and returns only the objects that are not completed
-  function deleteMultipleHelper(todos){
-    let tempTodos = [];
-    for(let i = 0; i < todos.length; i++){
-      if(todos[i].completed === true){
-        continue;
-      } else{
-        tempTodos.push(todos[i]);
-      }
-    }
-    return tempTodos;
+  function deleteMultipleHelper(todos) {
+    return todos.filter(todo => !todo.completed);
   }
 
   //delete multiple todos, takes in todos, and updates the todos
@@ -78,14 +71,8 @@ export default function App() {
 
   //to delete one todo, from the button. takes in an id
   //returns all the other todos
-  function deleteOneTodoHelper(id){
-    let tempTodos = [];
-    for(let i = 0; i < todos.length; i++){
-      if(todos[i].id !== id){
-        tempTodos.push(todos[i]);
-      }
-    }
-    return tempTodos;
+  function deleteOneTodoHelper(id) {
+    return todos.filter(todo => todo.id !== id);
   }
 
   //delete to-do, takes in id, and updates the todos

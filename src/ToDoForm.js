@@ -18,7 +18,8 @@ export default function ToDoForm({ addTodo }) {
     //stops the wepage from doing the typical, and allows it to update
     e.preventDefault();
     //screens to see if the text was empty or white space
-    if (text.trim() === "") return;
+    //changed to be more concise
+    if (!text.trim()) return;
     //calls the addTodo function, to create the task
     addTodo(text); 
     //clears the box, so user can write a new message
