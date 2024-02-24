@@ -1,11 +1,19 @@
 import { useState } from "react";
 import "./ImageSliderStyle.css";
+import nature from "./image_1.jpg";
+import food from "./image_2.jpg";
+import people from "./image_3.jpg";
 
 //Modified code from Monsterlessons Academy: https://youtu.be/SK9AlIbexOE?si=m4WICktHhxupVpV2
 
 //primary goal: to be able to encorporate another component with the task list
 
-const ImageSlider = ({ slides }) => {
+const ImageSlider = () => {
+  const slides = [
+    { url: nature, title: "Nature Image" },
+    { url: food, title: "Food Image" },
+    { url: people, title: "People Image" },
+  ];
   //initialize variables to know which slide
   const [currentIndex, setCurrentIndex] = useState(0);
 
